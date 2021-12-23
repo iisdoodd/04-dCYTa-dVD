@@ -98,6 +98,7 @@ if ["%input%"] == ["cls"] goto console REM  Clears all previous commands.
 if ["%input%"] == ["update"] goto update REM  Updates Seraph Console to the latest and stable version.
 if ["%input%"] == ["python"] goto python
 if ["%input%"] == ["node"] goto node
+if ["%input%"] == ["node.js"] goto node
 if ["%input%"] == [""] goto consoleinput
 if ["%input%"] == [" "] goto consoleinput
 if ["%input%"] == ["  "] goto consoleinput
