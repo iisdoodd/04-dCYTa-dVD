@@ -12,9 +12,20 @@ REM  Copyright © Seraph 2021. All Rights Reserved.
 
 :: ----------- Config ----------- ::
 
+ping -n 1 1.1.1.1 | find /I "Lost = 0" >nul
+if %errorlevel% == 0 goto start
+if not %errorlevel% == 1 goto netfail
+:netfail
+cls
+title Failed to connect.  :/
+echo Failed to connect to servers.
+echo Please try again later...
+timeout 5 >nul
+exit
+:start
 title Loading Seraph . . . 
 if not exist %appdata%\Seraph\ goto seraphfilesdownload
-if not exist %appdata%\Seraph\paping goto seraphfilesdownload
+if not exist %appdata%\Seraph\paping.exe goto seraphfilesdownload
 
 :config
 chcp 65001 >nul
